@@ -1,0 +1,23 @@
+class Solution {
+	public int solution(String t, String p) {
+		int answer = 0;
+		for (int i = 0; i < t.length() - p.length() + 1; i++) { // (t길이-p길이+1)번 반복
+			if (Long.parseLong(t.substring(i, i + p.length())) <= Long.parseLong(p)) { // t에서 p의 길이만큼 자른 값의 long값과 p의
+																						// long값과 비교
+				// if (Long.parseLong(t.substring(i, p.length()) + i) <= Long.parseLong(p)) 이거 왜
+				// 안됌?
+				answer++;
+			}
+		}
+		return answer;
+	}
+}
+
+public class p147355 {
+	public static void main(String args[]) {
+		Solution A = new Solution();
+		System.out.println(A.solution("3141592", "271"));
+		System.out.println(A.solution("500220839878", "7"));
+		System.out.println(A.solution("10203", "15"));
+	}
+}
