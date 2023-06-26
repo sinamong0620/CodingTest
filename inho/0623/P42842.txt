@@ -1,0 +1,32 @@
+
+class Solution {
+	public int[] solution(int brown, int yellow) {
+		int[] answer = new int[2];
+		int sum = brown + yellow;
+
+		for (int i = 1; i < sum; i++) {
+			int row = i; // 세로
+			int cel = sum / row; // 가로
+
+			if (row > cel)
+				continue; // 세로가 더 길면 continue
+
+			if ((row - 2) * (cel - 2) == yellow) { // yellow 갯수 조건 (길이가 3 이상)
+				answer[0] = cel;
+				answer[1] = row;
+				break;
+			}
+		}
+
+		return answer;
+	}
+}
+
+public class P42842 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
